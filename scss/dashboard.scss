@@ -1,0 +1,31 @@
+.dashboard {
+  &__sidebar {
+    padding: 1rem;
+    background-color: #f0f0f0;
+  }
+
+  &__content {
+    padding: 2rem;
+  }
+}
+
+.dashboard_user-card {
+  &__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  &__status--online {
+    color: green;
+  }
+
+  &__status--offline {
+    color: red;
+  }
+}

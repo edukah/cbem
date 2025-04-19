@@ -1,0 +1,33 @@
+{
+  "cBEM Component Block": {
+    "prefix": "rbem:block",
+    "body": [
+      ".${1:component-name} {",
+      "  &__${2:element} {",
+      "    $0",
+      "  }",
+      "}"
+    ],
+    "description": "cBEM component block with element"
+  },
+  "cBEM Contextual Block": {
+    "prefix": "rbem:context-block",
+    "body": [
+      ".${1:parent}_${2:child} {",
+      "  &__${3:element} {",
+      "    $0",
+      "  }",
+      "}"
+    ],
+    "description": "cBEM contextual block and element"
+  },
+  "cBEM Modifier": {
+    "prefix": "rbem:modifier",
+    "body": [
+      "&--${1:modifier} {",
+      "  $0",
+      "}"
+    ],
+    "description": "cBEM modifier for element or block"
+  }
+}

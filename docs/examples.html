@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>cBEM Examples</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem auto;
+      max-width: 960px;
+      padding: 1rem;
+      line-height: 1.6;
+    }
+    .box {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      background: #f9f9f9;
+    }
+    .box h2 {
+      margin-top: 0;
+    }
+    .demo {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-top: 0.5rem;
+    }
+    code {
+      background: #eee;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+    }
+    header {
+      background: #f0f0f0;
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+    nav a {
+      margin-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="examples.html">🧪 Examples</a>
+  </nav>
+</header>
+
+<h1>cBEM Class Name Examples</h1>
+
+<div class="box">
+  <h2>🧱 Basic Block + Element + Modifier</h2>
+  <div class="demo">
+    <div><code>.product-card__title</code> — The <em>title</em> element of the <strong>product-card</strong> block.</div>
+    <div><code>.product-card__image--rounded</code> — A modified version of the <strong>image</strong> element (rounded style).</div>
+    <div><code>.product-card__price--discounted</code> — The price element with a <em>discounted</em> variant.</div>
+  </div>
+</div>
+
+<div class="box">
+  <h2>🏗️ Block with Context</h2>
+  <div class="demo">
+    <div><code>.home-feed_product-card</code> — A <strong>product-card</strong> block used <em>within</em> a <strong>home-feed</strong> block.</div>
+    <div><code>.dashboard_user-card</code> — A <strong>user-card</strong> block shown inside a <strong>dashboard</strong> block.</div>
+    <div><code>.modal_login-form</code> — A <strong>login-form</strong> used in a <strong>modal</strong> component.</div>
+  </div>
+</div>
+
+<div class="box">
+  <h2>🧩 Context + Element + Modifier</h2>
+  <div class="demo">
+    <div><code>.home-feed_product-card__image-container</code> — The <em>image-container</em> element of <strong>product-card</strong> inside <strong>home-feed</strong>.</div>
+    <div><code>.dashboard_user-card__avatar</code> — The <em>avatar</em> element of <strong>user-card</strong> in dashboard context.</div>
+    <div><code>.modal_login-form__input--error</code> — An input with <em>error</em> modifier inside login-form in a modal.</div>
+  </div>
+</div>
+
+<div class="box">
+  <h2>⚙️ Advanced Multi-Context</h2>
+  <div class="demo">
+    <div><code>.home-container_showcase_product-card__header</code> — The <strong>product-card</strong>'s <em>header</em> element used inside <strong>showcase</strong>, which is inside <strong>home-container</strong>.</div>
+    <div><code>.a_b_c__element--active</code> — Example of deep nesting: <strong>block a</strong> → <strong>b</strong> → <strong>c</strong>, then an <em>element</em> with <em>active</em> modifier.</div>
+  </div>
+</div>
+
+<div class="box">
+  <h2>🚫 Invalid Anti-Patterns</h2>
+  <div class="demo">
+    <div><code>.block__element__sub</code> — ❌ Double `__` breaks clarity (no nested elements).</div>
+    <div><code>.block--mod--extra</code> — ❌ Double `--` is invalid modifier chaining.</div>
+    <div><code>__element</code> — ❌ Missing block name.</div>
+    <div><code>.block__--modifier</code> — ❌ Empty element before modifier.</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>cBEM Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem auto;
+      max-width: 960px;
+      padding: 1rem;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    code {
+      background: #f5f5f5;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    pre {
+      background: #f9f9f9;
+      padding: 1rem;
+      overflow-x: auto;
+      border-left: 4px solid #ccc;
+    }
+    ul {
+      margin-bottom: 1.5rem;
+    }
+    header {
+      background: #f0f0f0;
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+    nav a {
+      margin-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="examples.html">🧪 Examples</a>
+  </nav>
+</header>
+
+  <h1>cBEM: contextual BEM</h1>
+<p><strong>Version:</strong> v1.0.0</p>
+  <p><em>✳️ cBEM — A contextual enhancement of BEM that helps class names tell the full structural story.</em></p>
+  <p><strong>cBEM</strong> stands for <em>contextual BEM</em> — a respectful evolution of the original BEM naming methodology. It adds contextual awareness to your CSS class names while preserving BEM’s modularity.</p>
+
+  <h2>Why Use cBEM?</h2>
+  <ul>
+    <li>Provides context between nested components using <code>_</code></li>
+    <li>Maintains the familiar structure of BEM</li>
+    <li>Improves readability and predictability</li>
+    <li>Enforces consistency across large-scale projects</li>
+  </ul>
+
+  <h2>Syntax Summary</h2>
+  <pre><code>[block][_context[...]]__[element]--modifier</code></pre>
+
+  <h2>Class Usage Examples</h2>
+  <pre><code>
+.dashboard_user-card__avatar {}
+.dashboard_user-card__status--online {}
+
+.product-list__item {}
+.product-list__card-title {}
+.product-list__card-price--discounted {}
+
+.modal_login-form__input {}
+.modal_login-form__input--error {}
+
+.settings-form__input {}
+.settings-form__input--error {}
+  </code></pre>
+
+  <h2>Anti-patterns to Avoid</h2>
+  <ul>
+    <li><code>block__element__sub</code> ❌ – avoid nested element chaining</li>
+    <li><code>block--mod--extra</code> ❌ – avoid double modifiers</li>
+    <li><code>block__</code> ❌ – empty element name</li>
+    <li><code>__element</code> ❌ – missing block</li>
+    <li><code>--modifier</code> ❌ – missing block and element</li>
+    <li><code>block_</code> ❌ – empty context</li>
+    <li><code>block__element--</code> ❌ – empty modifier</li>
+    <li><code>block__--modifier</code> ❌ – invalid element-modifier pairing</li>
+    <li><code>Block__Element</code> ❌ – uppercase not allowed</li>
+  </ul>
+
+  <h2>Stylelint Rule</h2>
+  <pre><code>{
+  "rules": {
+    "selector-class-pattern": [
+      "^[a-z0-9-]+(?:_[a-z0-9-]+)*(?:__[a-z0-9-]+)?(?:--[a-z0-9-]+)?$",
+      {
+        "message": "Class names must follow cBEM: block[_context]__[element]--modifier"
+      }
+    ]
+  }
+}
+  </code></pre>
+
+  <h2>⚙️ Advanced Usage: Multi-level Context</h2>
+  <p>While cBEM recommends using only <strong>one level of <code>_</code> context</strong> for clarity, its syntax is flexible.<br>
+  This is valid and follows the cBEM pattern:</p>
+  <pre><code>.home-container_showcase_product-card__header {}</code></pre>
+  <p><strong>However</strong>, deeper nesting should only be used if it makes the structure clearer — not just because it's possible.<br>
+  cBEM gives you the freedom to decide what's readable in your context — team or solo, it's your call.</p>
+
+  <hr />
+  <p><small>cBEM is authored by edukah — 2025.<br>
+  It is open, structured, respectful to BEM, and ready for modern component architecture.</small></p>
+</body>
+</html>

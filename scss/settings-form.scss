@@ -1,0 +1,60 @@
+.settings-form {
+  &__group {
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    font-weight: bold;
+  }
+
+  &__input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+  }
+
+  &__input--error {
+    border-color: red;
+    background: #ffe6e6;
+  }
+
+  &__submit {
+    padding: 0.75rem 1.5rem;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+  }
+}
+
+.settings-form_profile {
+  &__input {
+    background-color: #f0f0f0;
+  }
+
+  &__input--disabled {
+    color: #999;
+    background-color: #e0e0e0;
+  }
+}
+
+.settings-form_theme-panel {
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__toggle--active {
+    color: green;
+  }
+}
+
+.settings-form_notifications {
+  &__checkbox {
+    margin-top: 0.5rem;
+  }
+
+  &__checkbox--muted {
+    opacity: 0.5;
+  }
+}
